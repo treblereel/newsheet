@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='Opensheet'>
   <inherits name='com.google.gwt.user.User' />
+  <inherits name="com.google.gwt.activity.Activity"/>
+  <inherits name="com.google.gwt.place.Place"/>
   <inherits name='com.google.gwt.junit.JUnit' />
   <inherits name='com.google.gwt.user.theme.standard.Standard' />
   <entry-point class='org.treblereel.opensheet.client.Opensheet' />
   <source path='client' />
   <source path='shared' />
 
+    <replace-with class="org.treblereel.opensheet.client.mvc.factory.ClientMvcFactoryImpl">
+        <when-type-is class="org.treblereel.opensheet.client.mvc.factory.ClientMvcFactory"/>
+    </replace-with>
+    
+  
 </module>
