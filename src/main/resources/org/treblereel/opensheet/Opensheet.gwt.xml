@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='Opensheet'>
-  <inherits name='com.google.gwt.user.User' />
-  <inherits name="com.google.gwt.activity.Activity"/>
-  <inherits name="com.google.gwt.place.Place"/>
-  <inherits name='com.google.gwt.junit.JUnit' />
-  <inherits name='com.google.gwt.user.theme.standard.Standard' />
-  <entry-point class='org.treblereel.opensheet.client.Opensheet' />
-  <source path='client' />
-  <source path='shared' />
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name="com.google.gwt.activity.Activity" />
+	<inherits name="com.google.gwt.place.Place" />
+	<inherits name='com.google.gwt.junit.JUnit' />
+	<inherits name='com.sencha.gxt.ui.GXT' />
+<!-- 	<inherits name='com.google.gwt.user.theme.standard.Standard' /> -->
+	<entry-point class='org.treblereel.opensheet.client.Opensheet' />
+	<source path='client' />
+	<source path='shared' />
+	<stylesheet src="reset.css" />
+	<inherits name='com.google.gwt.i18n.I18N' />
+	<extend-property name='locale' values='en, ru' />
+	<set-property-fallback name='locale' value='en' />
+	
+	<replace-with
+		class="org.treblereel.opensheet.client.mvc.factory.ClientMvcFactoryImpl">
+		<when-type-is
+			class="org.treblereel.opensheet.client.mvc.factory.ClientMvcFactory" />
+	</replace-with>
 
-    <replace-with class="org.treblereel.opensheet.client.mvc.factory.ClientMvcFactoryImpl">
-        <when-type-is class="org.treblereel.opensheet.client.mvc.factory.ClientMvcFactory"/>
-    </replace-with>
-    
-  
+
 </module>

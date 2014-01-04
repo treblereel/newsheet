@@ -5,6 +5,7 @@ import org.treblereel.opensheet.client.mvc.factory.ClientMvcFactory;
 import org.treblereel.opensheet.client.mvc.view.TimesheetView;
 
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 public class TimesheetActivity extends AbstractMainActivity implements TimesheetView.TimesheetPresenter {
@@ -17,7 +18,6 @@ public class TimesheetActivity extends AbstractMainActivity implements Timesheet
 	@Override
 	public void start(AcceptsOneWidget container, EventBus eventBus) {
 		applyCurrentLinkStyle(AppConstants.TIMESHEET_LINK_ID);
-		
 		final TimesheetView view = clientFactory.getTimesheetView();
 		view.setPresenter(this);
 		container.setWidget(view.asWidget());

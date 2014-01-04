@@ -3,7 +3,7 @@
   <!-- Inherit our applications main module.                      -->
   <inherits name='org.treblereel.opensheet.Opensheet' />
 
-  <!-- Specify the path to any remote services.                   -->
+  <!-- Specify the path to any remote services.                   
   <servlet path="/Opensheet/greet" class="org.treblereel.opensheet.server.GreetingServiceImpl" />
-
+-->
 </module>

@@ -1,25 +1,28 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar"
+	xmlns:gxtcontainer="urn:import:com.sencha.gxt.widget.core.client.container">
+	<ui:with field='i18n'
+		type='org.treblereel.opensheet.client.i18n.constants.ToolBarConstants' />
 
-    
-    <gwt:DockLayoutPanel unit="PX">
-		<gwt:north size="50">
-			<gwt:HTMLPanel styleName="b-app-header">
-				MVP in GWT 2.1 Sample Application
-			</gwt:HTMLPanel>
-		</gwt:north>	
-		
-		<gwt:west size="200">
-			<gwt:HTMLPanel styleName="b-app-navigator">
-				<a id="timesheet-view" href="#mail:">Timesheet</a>
-				<a id="admin-view" href="#contacts:">Admin</a>
-			</gwt:HTMLPanel>
-		</gwt:west>
-		
-		<gwt:center>
-			<gwt:SimplePanel styleName="b-app-content" ui:field="appContent" />
-		</gwt:center>
-	</gwt:DockLayoutPanel>	
-    
+
+
+	<gxtcontainer:Viewport>
+		<gxtcontainer:NorthSouthContainer>
+			<gxtcontainer:north>
+				<toolbar:ToolBar height="30" borders="true">
+					<button:TextButton text="{i18n.adminPage}"
+						ui:field="adminButton" />
+					<toolbar:SeparatorToolItem />	
+					<button:TextButton text="{i18n.timesheetPage}" ui:field="timesheetButton"/>
+				</toolbar:ToolBar>
+			</gxtcontainer:north>
+			<gxtcontainer:south>
+				<gwt:SimplePanel ui:field="appContent">
+				</gwt:SimplePanel>
+			</gxtcontainer:south>
+		</gxtcontainer:NorthSouthContainer>
+	</gxtcontainer:Viewport>
 </ui:UiBinder> 
